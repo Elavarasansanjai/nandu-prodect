@@ -1,0 +1,1209 @@
+@mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+.carticon {
+  display: flex;
+  .cart-icon {
+    margin-top: 10px;
+    color: orangered;
+    height: 35px;
+    position: relative;
+    .quantity {
+      position: absolute;
+      right: 140px;
+      text-decoration: none;
+      background-color: rgb(19, 18, 18);
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 1.7px;
+      padding-bottom: 1.7px;
+      color: white;
+      text-decoration: none;
+
+      border-radius: 50%;
+    }
+  }
+}
+.navigation {
+  @include devices(mobile) {
+    padding: 0 10px;
+  }
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 1;
+  height: 70px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 50px;
+  width: 100%;
+  background-color: rgb(223, 223, 223);
+  align-items: center;
+  h1 {
+    @include devices(mobile) {
+      font-size: 16px;
+    }
+  }
+  .pages {
+    .links {
+      @include devices(mobile) {
+        .mob {
+          display: none;
+        }
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        list-style-type: none;
+        @include devices(mobile) {
+        }
+        li {
+          list-style-type: none;
+        }
+      }
+      .menu {
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .carticon {
+        display: flex;
+        .cart-icon {
+          margin-top: 10px;
+          color: orangered;
+          height: 35px;
+          position: relative;
+          .quantity {
+            position: absolute;
+            right: 140px;
+            text-decoration: none;
+
+            padding-left: 8px;
+            padding-right: 8px;
+            padding-top: 1.7px;
+            padding-bottom: 1.7px;
+            color: rgb(12, 12, 12);
+            text-decoration: none;
+
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+.root {
+  @include devices(mobile) {
+    margin-top: 30px;
+  }
+  margin-top: 60px;
+  .home-container {
+    .homeprodect {
+      @include devices(mobile) {
+      }
+      background-image: url('https://images2.alphacoders.com/912/thumb-1920-912814.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      backface-visibility: cover;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    display: flex;
+    @include devices(mobile) {
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+    // justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    @include devices(mobile) {
+      padding: 40px;
+    }
+    .home-content {
+      @include devices(mobile) {
+        padding-left: 0px;
+        width: 100%;
+      }
+      padding: 20px;
+      width: 50%;
+      .bikeDelivery {
+        background-color: rgb(224, 224, 58);
+        color: black;
+
+        padding: 5px;
+        border-radius: 3px;
+        font-size: 13px;
+        margin: 10px;
+        outline: none;
+        border: none;
+      }
+      h2 {
+        @include devices(mobile) {
+          font-size: 20px;
+          margin: 5px;
+          font-family: sans-serif;
+        }
+        color: rgb(63, 63, 63);
+        font-style: normal;
+        margin: 10px;
+        font-size: 35px;
+        font-family: sans-serif;
+        width: 300px;
+        margin-bottom: 15px;
+        span {
+          color: orangered;
+        }
+      }
+      p {
+        @include devices(mobile) {
+          font-size: 15px;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+        }
+        margin: 10px;
+        font-size: 17px;
+        gap: 5px;
+        font-family: sans-serif;
+      }
+      .order-btn {
+        button {
+          margin: 10px;
+          outline: none;
+          border: none;
+          color: black;
+          padding: 8px;
+          border-radius: 5px;
+          background-color: orangered;
+        }
+      }
+    }
+    .home-prodect {
+      opacity: 0.7;
+      .prodect-container {
+        @include devices(mobile) {
+          width: 120px;
+          margin: 10px;
+          padding: 10px;
+          margin-right: 15px;
+        }
+        text-align: center;
+        padding: 15px;
+        width: 150px;
+        margin: 15px;
+        margin-right: 30px;
+        background-color: rgb(245, 245, 245);
+        border-radius: 10px;
+        img {
+          height: 50px;
+          width: 50px;
+          margin-bottom: 5px;
+          font-family: sans-serif;
+          font-size: bold;
+        }
+        p {
+          @include devices(mobile) {
+            font-size: 12px;
+          }
+          margin-bottom: 5px;
+          span {
+            color: orangered;
+          }
+        }
+      }
+    }
+  }
+
+  .freshItems {
+    @include devices(mobile) {
+      padding: 20px;
+      margin: 5px;
+    }
+    padding: 40px;
+    margin: 10px;
+    .freshContainer {
+      margin-bottom: 40px;
+      @include devices(mobile) {
+        margin-bottom: 20px;
+      }
+      h2 {
+        @include devices(mobile) {
+          font-size: 20px;
+        }
+        font-family: sans-serif;
+        color: black;
+        margin: 10px;
+      }
+      .underline {
+        height: 5px;
+        width: 200px;
+        margin: 10px;
+        background-color: orangered;
+        border-radius: 3px;
+      }
+    }
+    .fruitsContainer {
+      display: flex;
+      width: 100%;
+      overflow-x: scroll;
+      height: auto;
+      .fruits {
+        @include devices(mobile) {
+          width: 200px;
+        }
+        text-decoration: none;
+        width: 300px;
+        height: auto;
+        background-color: rgb(236, 236, 236);
+        border-radius: 6px;
+        padding: 13px;
+        margin: 15px;
+
+        .f-img {
+          display: flex;
+          justify-content: space-between;
+          div {
+            .img {
+              height: 60px;
+              width: 60px;
+              border-radius: 5px;
+              transition: 0.4s;
+            }
+            h2 {
+              color: white;
+              font-size: 20px;
+              padding: 5px;
+              border-radius: 55%;
+              background-color: orangered;
+            }
+          }
+        }
+        sub {
+          h3 {
+            color: black;
+            font-family: sans-serif;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          p {
+            color: rgb(56, 56, 56);
+            font-family: sans-serif;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          h5 {
+            span {
+              color: orangered;
+            }
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      &:hover {
+        .img {
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  }
+
+  .HotDishContainer {
+    @include devices(mobile) {
+      padding: 20px;
+      margin: 5px;
+    }
+    padding: 40px;
+    margin: 10px;
+    .freshContainer {
+      margin-bottom: 40px;
+      h2 {
+        @include devices(mobile) {
+          font-size: 20px;
+        }
+        font-family: sans-serif;
+        color: black;
+        margin: 10px;
+      }
+      .underline {
+        height: 5px;
+        width: 200px;
+        margin: 10px;
+        background-color: orangered;
+        border-radius: 3px;
+      }
+    }
+    .hotItemContainer {
+      .hotItems {
+        justify-content: center;
+        display: flex;
+        margin: 20px;
+        .items {
+          @include devices(mobile) {
+            flex-wrap: wrap;
+          }
+          display: flex;
+          flex-wrap: wrap;
+          div {
+            @include devices(mobile) {
+              height: 70px;
+              width: 70px;
+            }
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: rgb(238, 238, 238);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+            h3 {
+              margin-bottom: 5px;
+            }
+            h4 {
+              margin-bottom: 5px;
+              color: rgb(27, 27, 27);
+            }
+          }
+        }
+      }
+    }
+    .protectlistcontainer {
+      .prodectlist {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .fruits {
+        @include devices(mobile) {
+          width: 150px;
+        }
+        width: 230px;
+        height: auto;
+        background-color: rgb(236, 236, 236);
+        border-radius: 6px;
+        padding: 13px;
+        margin: 15px;
+
+        .f-img {
+          display: flex;
+          justify-content: space-between;
+          div {
+            .img {
+              height: 60px;
+              width: 60px;
+              border-radius: 5px;
+              transition: 0.4s;
+            }
+            h2 {
+              color: white;
+              font-size: 20px;
+              padding: 5px;
+              border-radius: 55%;
+              background-color: orangered;
+            }
+          }
+        }
+        sub {
+          h3 {
+            color: black;
+            font-family: sans-serif;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          p {
+            color: rgb(56, 56, 56);
+            font-family: sans-serif;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+          h5 {
+            span {
+              color: orangered;
+            }
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      &:hover {
+        .img {
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  }
+
+  .cart {
+    @include devices(mobile) {
+      flex-wrap: wrap;
+      padding: 20px;
+      margin: 10px;
+    }
+    display: flex;
+    padding: 20px 100px;
+    margin: 20px;
+    .cartProdects {
+      @include devices(mobile) {
+        margin-top: 50px;
+        width: 100%;
+        height: 70vh;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        @include devices(mobile) {
+          font-size: 20px;
+          font-family: 'Courier New', Courier, monospace;
+        }
+        color: rgb(53, 52, 52);
+        font-family: sans-serif;
+      }
+      width: 60%;
+      background-color: rgb(245, 242, 242);
+      padding: 10px;
+      border-radius: 10px;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-behavior: smo 6px 5px;
+      .cartProdect {
+        @include devices(mobile) {
+          padding: 10px;
+        }
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: rgb(248, 247, 247);
+        border: 1px solid rgb(228, 228, 228);
+        margin-bottom: 5px;
+        height: auto;
+        align-items: center;
+
+        img {
+          @include devices(mobile) {
+            height: 50px;
+            width: 50px;
+          }
+          height: 100px;
+          width: 100px;
+          border-radius: 8px;
+        }
+        .quantity-control {
+          @include devices(mobile) {
+            gap: 7px;
+          }
+
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          .plus {
+            @include devices(mobile) {
+              padding: 2px 2px;
+            }
+            border-radius: 3px;
+            padding: 3px 5px;
+            border: 1px solid black;
+          }
+          .dicrease {
+            @include devices(mobile) {
+              padding: 2px 2px;
+            }
+            border-radius: 3px;
+            padding: 3px 5px;
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+    .cartpayment {
+      @include devices(mobile) {
+        width: 100%;
+        padding: 20px;
+      }
+      width: 40%;
+      padding: 20px 40px;
+      .subtotal {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        h2 {
+          margin-left: 30px;
+          color: black;
+        }
+      }
+      .shipping {
+        margin-bottom: 20px;
+        display: flex;
+        p {
+          margin-left: 30px;
+          width: 100%;
+        }
+      }
+      .underline {
+        height: 3px;
+        width: 100%;
+        background-color: gray;
+        margin-bottom: 30px;
+        border-radius: 2px;
+      }
+      .total {
+        margin-bottom: 20px;
+        div {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      .payment {
+        margin-top: 20px;
+        button {
+          width: 100%;
+          text-align: center;
+          color: white;
+          padding: 10px;
+          background-color: black;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .prodectDetail {
+    @include devices(mobile) {
+      margin-top: 50px;
+      margin: 5px;
+      padding: 5px;
+    }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px;
+    padding: 20px;
+    .prodect {
+      @include devices(mobile) {
+        width: 100%;
+        margin: 30px;
+      }
+      width: 40%;
+      h2 {
+        @include devices(mobile) {
+          margin-top: 10px;
+          font-size: 20px;
+        }
+
+        margin-top: 20px;
+        text-align: center;
+        color: rgb(22, 22, 22);
+        margin-bottom: 20px;
+      }
+      div {
+        // justify-content: center;
+        display: flex;
+
+        flex-direction: column;
+        img {
+          height: 200px;
+          width: 200px;
+          border-radius: 10px;
+          margin: 0 auto;
+        }
+        .contentProdect {
+          margin-top: 20px;
+          .datas {
+            h2 {
+              margin-top: 13px;
+            }
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 40px;
+
+            margin-bottom: 10px;
+            p {
+              @include devices(mobile) {
+                width: 100%;
+              }
+              width: 100px;
+            }
+          }
+          .btn {
+            button {
+              margin-bottom: 10px;
+              color: white;
+              background-color: orangered;
+              border: none;
+              outline: none;
+              padding: 6px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+    .relatedItem {
+      width: 60%;
+      padding: 10px;
+      @include devices(mobile) {
+        width: 100%;
+      }
+      h2 {
+        @include devices(mobile) {
+          color: rgb(37, 36, 36);
+        }
+        text-align: center;
+        color: rgb(34, 34, 34);
+      }
+      .prodects {
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        @include devices(mobile) {
+          justify-content: space-around;
+        }
+        .fruits {
+          @include devices(mobile) {
+            width: 160px;
+            margin: 5px;
+          }
+          width: 200px;
+          height: auto;
+          background-color: rgb(236, 236, 236);
+          border-radius: 6px;
+          padding: 13px;
+          margin: 15px;
+
+          .f-img {
+            display: flex;
+            justify-content: space-between;
+            div {
+              .img {
+                height: 60px;
+                width: 60px;
+                border-radius: 5px;
+                transition: 0.4s;
+              }
+              h2 {
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                padding: 5px;
+                border-radius: 55%;
+                background-color: orangered;
+              }
+            }
+          }
+          sub {
+            h3 {
+              color: black;
+              font-family: sans-serif;
+              text-decoration: none;
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+            p {
+              text-decoration: none;
+              color: rgb(56, 56, 56);
+              font-family: sans-serif;
+              margin-top: 10px;
+              margin-bottom: 10px;
+            }
+            h5 {
+              span {
+                text-decoration: none;
+                color: orangered;
+              }
+              color: black;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              text-decoration: none;
+            }
+          }
+        }
+        &:hover {
+          .img {
+            height: 70px;
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+}
+.signin-container {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 90vw;
+  margin: auto auto;
+  @include devices(mobile) {
+    background: aquamarine;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 90vw;
+    margin: auto auto;
+
+    // code set for mobile
+  }
+  .signin-form {
+    @include devices(mobile) {
+      width: 80%;
+      height: auto;
+      padding: 20px;
+      // code set for mobile
+    }
+    text-align: center;
+    gap: 10px;
+    width: 40%;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+    border: 0.5px solid rgb(247, 246, 246);
+    height: auto;
+    h1 {
+      @include devices(mobile) {
+        color: rgb(26, 25, 25);
+        font-family: sans-serif;
+        margin-bottom: 15px;
+        // code set for mobile
+      }
+      color: rgb(32, 31, 31);
+      margin-bottom: 20px;
+      font-size: 20px;
+
+      font-family: sans-serif;
+    }
+    form {
+      div {
+        @include devices(mobile) {
+          width: 90%;
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          justify-content: space-between;
+          // code set for mobile
+        }
+        margin-bottom: 20px;
+        width: 70%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+
+        justify-content: space-between;
+        label {
+          color: rgb(36, 35, 35);
+          font-family: 'Courier New', Courier, monospace;
+        }
+        input {
+          border-radius: 6px;
+          padding: 4px;
+          color: rgb(10, 10, 10);
+          outline: none;
+          border: 0.2px solid black;
+        }
+        p {
+          color: red;
+          font-size: 20px;
+        }
+      }
+      button {
+        background-color: orangered;
+        color: white;
+        padding: 6px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        margin-top: 20px;
+        margin-bottom: 17px;
+        cursor: pointer;
+      }
+    }
+  }
+  p {
+    margin-top: 5px;
+    color: rgb(53, 53, 53);
+    font-size: 17px;
+    .link {
+      color: blue;
+      text-decoration: none;
+    }
+  }
+}
+.form-container {
+  @include devices(mobile) {
+    height: auto;
+    margin-top: 80px;
+  }
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 90vw;
+  margin: auto auto;
+  form {
+    padding: 24px;
+    border-radius: 10px;
+    background-color: rgb(238, 235, 235);
+    h1 {
+      color: rgb(24, 23, 23);
+      margin-bottom: 15px;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      @include devices(mobile) {
+        justify-content: space-between;
+      }
+      input {
+        @include devices(mobile) {
+          padding: 4px;
+        }
+        padding: 8px;
+        outline: none;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-size: 18px;
+      }
+    }
+    .prodects-detail {
+      h1 {
+        @include devices(mobile) {
+          font-size: 18px;
+        }
+        font-family: monospace;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        @include devices(mobile) {
+          display: flex;
+          justify-content: space-between;
+        }
+        input {
+          @include devices(mobile) {
+            padding: 3px;
+            margin-left: 20px;
+          }
+          padding: 8px;
+          outline: none;
+          border: 1px solid black;
+          border-radius: 6px;
+          font-size: 18px;
+        }
+        button {
+          margin: 0 auto;
+          background-color: orangered;
+          color: white;
+          padding: 6px;
+          border-radius: 5px;
+          outline: none;
+          border: none;
+          margin-top: 20px;
+          margin-bottom: 17px;
+          cursor: pointer;
+        }
+        p {
+          color: red;
+        }
+      }
+    }
+  }
+}
+.strippayment {
+  @include devices(mobile) {
+    margin: 10px;
+  }
+  margin: 30px;
+  justify-content: space-between;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  .order-prodect-container {
+    @include devices(mobile) {
+      width: 100%;
+      height: 80vh;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+    width: 60%;
+    padding: 10px;
+    background-color: rgb(230, 224, 224);
+    height: 90vh;
+    overflow: scroll;
+    border-radius: 30px;
+
+    .order-prodect {
+      width: 100%;
+      h2 {
+        text-align: center;
+        color: rgb(31, 30, 30);
+        margin-bottom: 20px;
+
+        font-family: 'Courier New', Courier, monospace;
+      }
+      .cartProdect {
+        @include devices(mobile) {
+          width: 100%;
+          padding: 10px;
+        }
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: rgb(241, 235, 235);
+        border: 1px solid rgb(228, 228, 228);
+        margin-bottom: 5px;
+        height: auto;
+        align-items: center;
+
+        img {
+          @include devices(mobile) {
+            width: 50px;
+            height: 50px;
+          }
+          height: 100px;
+          width: 100px;
+          border-radius: 8px;
+        }
+        .quantity-control {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          .plus {
+            border-radius: 3px;
+            padding: 3px 5px;
+            border: 1px solid black;
+          }
+          .dicrease {
+            border-radius: 3px;
+            padding: 3px 5px;
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+  div {
+    @include devices(mobile) {
+      width: 100%;
+      margin: 0px;
+    }
+    width: 40%;
+    padding: 10px;
+    justify-content: center;
+    margin: 0 auto;
+    .orederAddres {
+      width: 100%;
+
+      // background-color: black;
+      form {
+        // justify-content: center;
+        // align-items: center;
+        // display: flex;
+        // flex-direction: column;
+        width: 100%;
+        h2 {
+          text-align: center;
+        }
+        div {
+          align-items: center;
+          @include devices(mobile) {
+            display: flex;
+            justify-content: space-around;
+          }
+          margin: 10px;
+          label {
+            font-size: 16px;
+            font-family: monospace;
+          }
+          input {
+            @include devices(mobile) {
+              width: 200px;
+            }
+            width: 400px;
+            margin-top: 10px;
+            padding: 5px;
+            border: 0.2px solid rgb(43, 42, 42);
+            border-radius: 3px;
+            font-size: 16px;
+            color: rgb(15, 15, 15);
+
+            outline: none;
+          }
+          textarea {
+            @include devices(mobile) {
+              width: 200px;
+              height: 200px;
+            }
+            width: 400px;
+            margin-top: 10px;
+            height: 150px;
+            padding: 5px;
+            border: 0.2px solid rgb(43, 42, 42);
+            border-radius: 3px;
+            font-size: 16px;
+            color: rgb(15, 15, 15);
+
+            outline: none;
+          }
+        }
+        button {
+          display: flex;
+          outline: none;
+          margin: 0 auto;
+          margin: 15px;
+          padding: 5px;
+          border-radius: 4px;
+          outline: none;
+          background-color: orangered;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.userprofile {
+  margin-top: 80px;
+  width: 100%;
+  height: 100%;
+  .order {
+    .user-name {
+      h3 {
+        color: rgb(31, 30, 30);
+        margin-bottom: 20px;
+      }
+      .mob {
+        display: none;
+        :hover {
+          cursor: pointer;
+          color: red;
+        }
+        @include devices(mobile) {
+          display: flex;
+          margin-bottom: 20px;
+          font-family: sans-serif;
+        }
+      }
+      button {
+        padding: 5px;
+        background-color: orangered;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        color: white;
+      }
+    }
+
+    align-items: center;
+    justify-content: space-around;
+    margin: auto auto;
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    .order-detail {
+      @include devices(mobile) {
+        width: 100%;
+      }
+      width: 80%;
+      .order-prodect {
+        width: 100%;
+        h2 {
+          @include devices(mobile) {
+            margin-top: 20px;
+          }
+          text-align: center;
+          color: rgb(31, 30, 30);
+          margin-bottom: 20px;
+
+          font-family: 'Courier New', Courier, monospace;
+        }
+        .cartProdect {
+          @include devices(mobile) {
+            width: 100%;
+            padding: 10px;
+          }
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          padding: 10px 20px;
+          border-radius: 10px;
+          background-color: rgb(241, 235, 235);
+          border: 1px solid rgb(228, 228, 228);
+          margin-bottom: 5px;
+          height: auto;
+          align-items: center;
+
+          img {
+            @include devices(mobile) {
+              width: 50px;
+              height: 50px;
+            }
+            height: 100px;
+            width: 100px;
+            border-radius: 8px;
+          }
+          .quantity-control {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            .plus {
+              border-radius: 3px;
+              padding: 3px 5px;
+              border: 1px solid black;
+            }
+            .dicrease {
+              border-radius: 3px;
+              padding: 3px 5px;
+              border: 1px solid black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
